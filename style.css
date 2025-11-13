@@ -63,22 +63,23 @@
 
 .kontakt {
     position: absolute;
-    top: 400px;                 /* можно подкорректировать под фон */
+    bottom: 40px; /* блок снизу фона */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* текст сверху, кнопка снизу */
     align-items: center;
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
-    padding: 20px 30px;
-    width: 850px;               /* ширина для ПК */
-    height: 100px;
+    padding: 30px 40px;
+    width: 700px;  /* ширина блока на ПК */
     color: antiquewhite;
-    font-size: 44px;
+    font-size: 36px;
     z-index: 3;
+    text-align: center; /* центр текста */
+    gap: 20px; /* расстояние между текстом и кнопкой */
 }
 
 .call-btn {
@@ -90,33 +91,56 @@
     cursor: pointer;
     color: #080e5a;
     transition: 0.3s;
+    width: auto;
+    min-width: 200px;
 }
 
 .call-btn:hover {
     transform: scale(1.05);
 }
 
-/* ------------------------------
+/* ===============================
    Адаптивность для планшетов и телефонов
--------------------------------*/
-@media (max-width: 768px) {
+=============================== */
+@media (max-width: 1024px) {
     .kontakt {
-        width: 90%;              /* подстраиваем под ширину экрана */
-        flex-direction: column;   /* текст сверху, кнопка снизу */
-        gap: 15px;                /* расстояние между текстом и кнопкой */
-        padding: 15px;
-        font-size: 20px;          /* уменьшаем шрифт */
-        height: auto;             /* авто-высота под контент */
-        top: 350px;               /* смещаем блок при необходимости */
+        width: 80%;
+        font-size: 28px;
+        padding: 25px 30px;
     }
 
     .call-btn {
-        width: 100%;              /* кнопка растягивается на всю ширину блока */
-        padding: 15px 25px;       /* уменьшаем padding кнопки */
-        font-size: 18px;           /* шрифт меньше */
+        padding: 18px 35px;
+        font-size: 20px;
     }
 }
 
+@media (max-width: 768px) {
+    .kontakt {
+        width: 90%;
+        font-size: 22px;
+        padding: 20px 25px;
+        bottom: 20px;
+    }
+
+    .call-btn {
+        width: 100%; /* кнопка на всю ширину блока */
+        padding: 15px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .kontakt {
+        font-size: 18px;
+        padding: 15px 20px;
+    }
+
+    .call-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
 /* ======== ЗАГОЛОВОК ВТОРОЙ СЕКЦИИ ======== */
 .sluzba1 {
   background-color: rgb(230, 209, 188);
@@ -200,4 +224,5 @@
   }
 
 }
+
 
